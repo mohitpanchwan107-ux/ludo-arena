@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ludo Arena — Free Online Ludo</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="shell">
+<header><div class="logo">🎲</div><div><h1>Ludo Arena</h1><p>Play together. Play for free.</p></div></header>
+<section class="panel" id="setup"><h2>Start a game</h2>
+<label>Nickname<input id="name" maxlength="18" value="Player" placeholder="Choose a nickname"></label>
+<label>Players<select id="mode"><option value="2">2 players</option><option value="4">4 players</option></select></label>
+<div class="actions"><button id="quick">Quick Match</button><button class="secondary" id="create">Create Room</button></div>
+<div class="join"><input id="roomCode" maxlength="6" placeholder="Enter room code"><button class="secondary" id="join">Join Room</button></div>
+<p class="note">Free to play · No entry fee · No deposits or cash prizes</p><p class="error" id="error"></p></section>
+<section class="panel hidden" id="game">
+<div class="topline"><div><h2>Game room</h2><p>Room code: <b id="code"></b></p></div><button class="secondary mini" id="copy">Copy code</button></div>
+<div class="players" id="players"></div>
+<div class="board-wrap"><svg id="board" viewBox="0 0 600 600" role="img" aria-label="Ludo game board"></svg></div>
+<div class="gamebar"><div><small>DICE</small><div class="dice" id="dice">—</div></div><div class="status"><small>GAME STATUS</small><p id="status">Waiting for players…</p></div><button id="roll" disabled>Roll dice</button></div>
+<p class="note">Tap one of your glowing tokens after rolling. Roll a 6 to bring a token out. A 6 or capture gives another turn.</p>
+<button class="textbtn" id="leave">Leave room</button></section>
+<footer>Friendly free play. Use a nickname and never share personal details.</footer></main>
+<script src="/socket.io/socket.io.js"></script><script src="app.js"></script></body></html>
